@@ -7,10 +7,7 @@
     "url": "https://github.com/chic/hass-tydom2mqtt",
     "startup": "application",
     "boot": "auto",
-    "ports": {
-     
-    },
-    "map": ["config:rw", "ssl"],
+     "map": ["config:rw", "ssl"],
     "options": {},
     "schema": {},
     "image": ""
