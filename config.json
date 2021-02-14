@@ -1,0 +1,17 @@
+{
+    "name": "tydom2mqtt",
+    "version": "1.0",
+    "slug": "tydom2mqtt",
+    "description": "Link betwen tydown (deltadore) and mqtt to integrate in hass",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "url": "https://github.com/chic/tydom2mqtt",
+    "startup": "application",
+    "boot": "auto",
+    "ports": {
+     
+    },
+    "map": ["config:rw", "ssl"],
+    "options": {},
+    "schema": {},
+    "image": ""
+  }
