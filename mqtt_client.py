@@ -115,8 +115,8 @@ class MQTT_Hassio():
             value = str(payload).strip('b').strip("'")
 
             get_id = (topic.split("/"))[2] #extract ids from mqtt
-            device_id = (get_id.split("_"))[0] #extract id from mqtt
-            endpoint_id = (get_id.split("_"))[1] #extract id from mqtt
+            device_id = (get_id.split("_"))[1] #extract id from mqtt
+            endpoint_id = (get_id.split("_"))[2] #extract id from mqtt
 
             print(str(get_id), 'positionCmd', value)
             await Cover.put_positionCmd(tydom_client=self.tydom, device_id=device_id, cover_id=endpoint_id, positionCmd=str(value))
@@ -128,8 +128,8 @@ class MQTT_Hassio():
             value = json.loads(payload)
             # print(value)
             get_id = (topic.split("/"))[2] #extract ids from mqtt
-            device_id = (get_id.split("_"))[0] #extract id from mqtt
-            endpoint_id = (get_id.split("_"))[1] #extract id from mqtt
+            device_id = (get_id.split("_"))[1] #extract id from mqtt
+            endpoint_id = (get_id.split("_"))[2] #extract id from mqtt
             
             await Cover.put_position(tydom_client=self.tydom, device_id=device_id, cover_id=endpoint_id, position=str(value))
 
@@ -138,8 +138,8 @@ class MQTT_Hassio():
             value = str(payload).strip('b').strip("'")
 
             get_id = (topic.split("/"))[2]  # extract ids from mqtt
-            device_id = (get_id.split("_"))[0]  # extract id from mqtt
-            endpoint_id = (get_id.split("_"))[1]  # extract id from mqtt
+            device_id = (get_id.split("_"))[1]  # extract id from mqtt
+            endpoint_id = (get_id.split("_"))[2]  # extract id from mqtt
 
             print(str(get_id), 'levelCmd', value)
             await Light.put_levelCmd(tydom_client=self.tydom, device_id=device_id, light_id=endpoint_id,
@@ -152,8 +152,8 @@ class MQTT_Hassio():
             value = json.loads(payload)
             # print(value)
             get_id = (topic.split("/"))[2]  # extract ids from mqtt
-            device_id = (get_id.split("_"))[0]  # extract id from mqtt
-            endpoint_id = (get_id.split("_"))[1]  # extract id from mqtt
+            device_id = (get_id.split("_"))[1]  # extract id from mqtt
+            endpoint_id = (get_id.split("_"))[2]  # extract id from mqtt
 
             await Light.put_level(tydom_client=self.tydom, device_id=device_id, light_id=endpoint_id,
                                      level=str(value))
@@ -163,8 +163,8 @@ class MQTT_Hassio():
             command = str(payload).strip('b').strip("'")
 
             get_id = (topic.split("/"))[2] #extract ids from mqtt
-            device_id = (get_id.split("_"))[0] #extract id from mqtt
-            endpoint_id = (get_id.split("_"))[1] #extract id from mqtt
+            device_id = (get_id.split("_"))[1] #extract id from mqtt
+            endpoint_id = (get_id.split("_"))[2] #extract id from mqtt
 
             await Alarm.put_alarm_state(tydom_client=self.tydom, device_id=device_id, alarm_id=endpoint_id, asked_state=command, home_zone=self.home_zone, night_zone=self.night_zone)
  
@@ -175,8 +175,8 @@ class MQTT_Hassio():
             value = json.loads(payload)
             # print(value)
             get_id = (topic.split("/"))[2]  # extract ids from mqtt
-            device_id = (get_id.split("_"))[0]  # extract id from mqtt
-            endpoint_id = (get_id.split("_"))[1]  # extract id from mqtt
+            device_id = (get_id.split("_"))[1]  # extract id from mqtt
+            endpoint_id = (get_id.split("_"))[2]  # extract id from mqtt
 
             await Boiler.put_temperature(tydom_client=self.tydom, device_id=device_id, boiler_id=endpoint_id,
                                      set_setpoint=str(value))
@@ -187,8 +187,8 @@ class MQTT_Hassio():
             print('Incoming MQTT set_hvacMode request : ', topic, value)
             # print(value)
             get_id = (topic.split("/"))[2]  # extract ids from mqtt
-            device_id = (get_id.split("_"))[0]  # extract id from mqtt
-            endpoint_id = (get_id.split("_"))[1]  # extract id from mqtt
+            device_id = (get_id.split("_"))[1]  # extract id from mqtt
+            endpoint_id = (get_id.split("_"))[2]  # extract id from mqtt
 
             await Boiler.put_hvacMode(tydom_client=self.tydom, device_id=device_id, boiler_id=endpoint_id,
                                      set_hvacMode=str(value))
@@ -199,8 +199,8 @@ class MQTT_Hassio():
             print('Incoming MQTT set_thermicLevel request : ', topic, value)
             # print(value)
             get_id = (topic.split("/"))[2]  # extract ids from mqtt
-            device_id = (get_id.split("_"))[0]  # extract id from mqtt
-            endpoint_id = (get_id.split("_"))[1]  # extract id from mqtt
+            device_id = (get_id.split("_"))[1]  # extract id from mqtt
+            endpoint_id = (get_id.split("_"))[2]  # extract id from mqtt
 
             await Boiler.put_thermicLevel(tydom_client=self.tydom, device_id=device_id, boiler_id=endpoint_id,
                                      set_thermicLevel=str(value))

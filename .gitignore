@@ -1,0 +1,12 @@
+__pycache__/*.pyc
+__pycache__/alarm_control_panel.cpython-38.pyc
+__pycache__/boiler.cpython-38.pyc
+__pycache__/cover.cpython-38.pyc
+__pycache__/electric.cpython-38.pyc
+__pycache__/light.cpython-38.pyc
+__pycache__/mqtt_client.cpython-38.pyc
+__pycache__/sensors.cpython-38.pyc
+__pycache__/tydomConnector.cpython-38.pyc
+__pycache__/tydomMessagehandler.cpython-38.pyc
+__pycache__/window.cpython-38.pyc
+.vscode/settings.json
